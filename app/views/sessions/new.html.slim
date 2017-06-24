@@ -3,7 +3,7 @@ h1 ログイン
 = form_for :session, url: sessions_path, method: :post do |f|
   - if flash[:error].present?
     #error_explanation
-      h2 = 'ユーザ情報の保存に失敗しました:'
+      h2 = 'ログインできませんでした:'
       ul
         li = flash[:error]
 
