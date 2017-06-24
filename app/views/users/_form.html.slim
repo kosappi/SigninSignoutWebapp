@@ -12,4 +12,10 @@
   .field
     = f.label :mail
     = f.text_field :mail
+  .field
+    = f.label :password
+    = f.password_field :password
+  .field
+    = f.label :password_cofirmation
+    = f.password_field :password_confirmation
   .actions = f.submit value: '送信'
