@@ -1,0 +1,16 @@
+h1 ログイン
+
+= form_for :session, url: sessions_path, method: :post do |f|
+  - if flash[:error].present?
+    #error_explanation
+      h2 = 'ユーザ情報の保存に失敗しました:'
+      ul
+        li = flash[:error]
+
+  .field
+    = f.label :mail
+    = f.text_field :mail
+  .field
+    = f.label :password
+    = f.password_field :password
+  .actions = f.submit value: '送信'
