@@ -36,4 +36,23 @@ $ bundle exec rails server
 
 ## 画面説明
 
-![登録](http://imgur.com/a/d9jSW)
+ルートパスにアクセスすると新規登録画面が出ます。
+
+![1](http://i.imgur.com/MDdJ7WY.png?1)
+
+新規登録画面とログイン画面は相互に移動できます。
+
+![2](http://i.imgur.com/LMeEmRq.png?1)
+
+新規登録を完了すると個人情報画面に飛びます。
+
+![3](http://i.imgur.com/QKjQgzc.png?1)
+
+自分の情報を編集できます。
+
+![4](http://i.imgur.com/YKFu9uk.png?1)
+
+ログインした状態でルートパスにアクセスした場合、新規登録フォームは出ません。
+また、ログイン画面から　ログインした場合は、こちらの画面に飛びます。
+
+![5](http://i.imgur.com/icOeImG.png?1)
