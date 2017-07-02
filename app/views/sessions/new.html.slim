@@ -8,9 +8,12 @@ h1 ログイン
         li = flash[:error]
 
   .field
-    p メールアドレス
+    = f.label :mail
     = f.text_field :mail
   .field
-    p パスワード
+    = f.label :password
     = f.password_field :password
   .actions = f.submit value: '送信'
+
+
+= link_to '新規登録', root_path

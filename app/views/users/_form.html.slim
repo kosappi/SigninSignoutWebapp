@@ -7,15 +7,15 @@
           li = message
 
   .field
-    p 名前
+    = f.label :name
     = f.text_field :name
   .field
-    p メールアドレス
+    = f.label :mail
     = f.text_field :mail
   .field
-    p パスワード
+    = f.label :password
     = f.password_field :password
   .field
-    p パスワード(確認)
+    = f.label :password_confirmation
     = f.password_field :password_confirmation
   .actions = f.submit value: '送信'
