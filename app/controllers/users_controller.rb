@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in @user
-      redirect_to @user, notice: 'ユーザの新規登録に成功しました。'
+      redirect_to profile_path, notice: 'ユーザの新規登録に成功しました。'
     else
       render :new
     end
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'ユーザ情報の更新に成功しました。'
+      redirect_to profile_path, notice: 'ユーザ情報の更新に成功しました。'
     else
       render :edit
     end
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

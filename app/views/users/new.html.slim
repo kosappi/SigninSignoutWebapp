@@ -1,3 +1,6 @@
-h1 SinginSingoutWebapp
-
-== render 'form'
+-if signed_in?
+  h2 ようこそ
+-else
+  h2 新規登録
+  == render 'form'
+  = link_to 'ログイン', signin_path

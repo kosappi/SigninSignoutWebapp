@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :hide_from_signed_in_user, only: [:new, :create]
+
   def new
   end
 
@@ -16,4 +18,13 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to root_path
   end
+
+  private
+
+  def hide_from_signed_in_user
+    if signed_in?
+      redirect_to root_path
+    end
+  end
+
 end
