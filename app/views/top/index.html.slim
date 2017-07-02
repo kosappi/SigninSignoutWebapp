@@ -1,9 +1,0 @@
-h1 トップページ
-
-ul
-  - unless signed_in?
-    li = link_to '新規登録', signup_path
-    li = link_to 'ログイン', signin_path
-  - else
-    li = "#{current_user.name}でログイン中"
-    li = link_to 'ログアウト', signout_path, method: :delete
