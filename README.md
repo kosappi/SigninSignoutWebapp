@@ -1,24 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Railsのデフォルト状態に、手作りでユーザ認証システム(登録、編集、ログイン、ログアウト)を追加したものです。
 
-Things you may want to cover:
+## 動作環境
 
-* Ruby version
+* Ruby Version
 
-* System dependencies
+## 起動まで
 
-* Configuration
+まずは clone してください。
 
-* Database creation
+```
+$ git clone git@github.com:kosappi/SigninSignoutWebapp.git
+```
 
-* Database initialization
+次に、bundle install してください。
 
-* How to run the test suite
+```
+$ cd ./SigninSignoutWebapp
+$ bundle install --path vendor/bundler
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+起動の前に、マイグレーションを実行してください。
 
-* Deployment instructions
+```
+$ bundle exec rake db:migrate
+```
 
-* ...
+最後に、rails コマンドでウェブサーバを起動してください。
+
+```
+$ bundle exec rails server
+```
