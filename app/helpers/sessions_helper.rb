@@ -15,6 +15,7 @@ module SessionsHelper
   end
 
   def sign_out
+    current_user.encrypted_remember_token = nil
     session.delete(:remember_token)
   end
 end
