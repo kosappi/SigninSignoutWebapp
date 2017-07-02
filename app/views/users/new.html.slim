@@ -1,6 +1,6 @@
 -if signed_in?
-  h2 ようこそ
+  h2.text-center ようこそ
 -else
-  h2 新規登録
+  h2.text-center 新規登録
   == render 'form'
-  = link_to 'ログイン', signin_path
+  = link_to 'すでに登録済みの場合はこちらからログイン', signin_path

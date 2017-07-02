@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user
     unless signed_in?
-      redirect_to controller: 'top', action: 'index'
+      redirect_to root_path
     end
   end
 end

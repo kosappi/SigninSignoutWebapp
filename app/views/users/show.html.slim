@@ -1,12 +1,11 @@
+h2.text-center 個人情報確認
 p#notice = notice
 
-p
-  strong 名前:
-  = @user.name
-p
-  strong メールアドレス:
-  = @user.mail
-
-= link_to '編集', profile_edit_path
-'  |
-= link_to '戻る', root_path
+table.table
+  tbody
+    tr
+      th 名前
+      td = @user.name
+    tr
+      th メールアドレス
+      td = @user.mail

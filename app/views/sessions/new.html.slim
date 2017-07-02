@@ -1,4 +1,4 @@
-h1 ログイン
+h1.text-center ログイン
 
 = form_for :session, url: sessions_path, method: :post do |f|
   - if flash[:error].present?
@@ -8,12 +8,12 @@ h1 ログイン
         li = flash[:error]
 
   .field
-    = f.label :mail
-    = f.text_field :mail
+    label メールアドレス
+    = f.text_field :mail, class: 'form-control'
   .field
-    = f.label :password
-    = f.password_field :password
-  .actions = f.submit value: '送信'
+    label パスワード
+    = f.password_field :password, class: 'form-control'
+  .actions = f.submit value: '送信', class: 'btn btn-primary'
 
 
-= link_to '新規登録', root_path
+= link_to '新規登録画面へ戻る', root_path

@@ -3,13 +3,26 @@ html
     title SigninSignoutWebapp
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .header
-      h1 SigninSignoutWebapp
-    == yield
-    .footer
-      -if signed_in?
-        .ul
-          .li = link_to '個人情報確認', profile_path
-          .li = link_to 'ログアウト', signout_path, method: :delete
+    .row
+      .col-xs-4.col-xs-offset-4
+        h1.text-center SigninSignoutWebapp
+    .row
+      .col-xs-4.col-xs-offset-4
+        == yield
+    .row
+      .col-xs-4.col-xs-offset-4
+        - if signed_in?
+          .list-group
+            = link_to '#', class: 'list-group-item'
+              span.glyphicon.glyphicon-info-sign ログイン中です
+            = link_to '#', class: 'list-group-item'
+              span.glyphicon.glyphicon-user #{current_user.name}
+            = link_to profile_edit_path, class: 'list-group-item'
+              span.glyphicon.glyphicon-pencil 個人情報編集
+            = link_to root_path, class: 'list-group-item'
+              span.glyphicon.glyphicon-home トップページへ
+            = link_to signout_path, method: :delete, class: 'list-group-item'
+              span.glyphicon.glyphicon-log-out ログアウト
